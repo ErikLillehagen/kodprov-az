@@ -1,4 +1,4 @@
-import React, {Suspense, useState} from "react";
+import React, {Suspense, useEffect, useState} from "react";
 import useFetch from "../../hooks/useFetch";
 import Loading from "../../components/Loading/Loading";
 import Navbar from "../../components/Navbar/Navbar";
@@ -7,12 +7,12 @@ import {SearchResultProps} from "../../types/showProps";
 import {useLocation} from "react-router-dom";
 
 interface propState{
-  searchValue?: string
+  redirectSearchValue?: string
 }
 
 const Landing = () => {
   const location = useLocation();
-  let { searchValue:redirectSearchValue } = location?.state as propState;
+  let { redirectSearchValue } = {...location?.state as propState};
   const [searchValue, setSearchValue] = useState<string>(redirectSearchValue || '')
   const {data, error} = useFetch<SearchResultProps[]>(`https://api.tvmaze.com/search/shows?q=${searchValue}`);
   const updateSearchValue = (val: string):void => {

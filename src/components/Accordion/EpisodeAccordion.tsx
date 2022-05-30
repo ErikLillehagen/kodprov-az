@@ -20,7 +20,7 @@ const EpisodeAccordion = ({title, episodes}: AccordionProps) => {
       </div>
       {isActive &&
           <div className="accordion-content">
-            {episodes.map((episode, index) => <Episode data={episode} />)}
+            {episodes.map((episode, index) => <Episode key={index} data={episode} />)}
           </div>
       }
     </div>

@@ -24,7 +24,7 @@ const Details = () => {
   }
   const handleClick = () => {
     if (searchValue == '') return
-    navigate('/', {state: {searchValue: searchValue}})
+    navigate('/', {state: {redirectSearchValue: searchValue}})
   }
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') handleClick();
@@ -49,7 +49,7 @@ const Details = () => {
           <div dangerouslySetInnerHTML={{__html: data.summary}}/>
         </div>
         <div className='details-genres'>
-          {data.genres.map(genre => <span className='genre-bubble'>{genre}</span>)}
+          {data.genres.map((genre, index) => <span key={index} className='genre-bubble'>{genre}</span>)}
         </div>
         <div className='details-extra-info'>
           <p>Status: {data.status}</p>
@@ -63,8 +63,6 @@ const Details = () => {
         <div className='episodes'>
           {episodeData && <EpisodeAccordion title='Episodes' episodes={episodeData} />}
         </div>
-        {/*<div>{JSON.stringify(episodeData)}</div>*/}
-
       </div>
     </Suspense>
   )
