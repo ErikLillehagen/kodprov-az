@@ -1,0 +1,20 @@
+import './Result.css'
+import {Link} from "react-router-dom";
+import TvImage from "../TvImage/TvImage";
+import {SearchResultProps} from "../../types/showProps";
+
+const Result = ({show, score}: SearchResultProps) => (
+  <Link to={`/show/${show.id}`}>
+    <div className='result-container'>
+      <TvImage url={show.image?.medium}/>
+      <div className='result-info'>
+        <h2 className='result-header'>{show.name}</h2>
+        <h4>Rating: {show.rating.average || "n/a"}</h4>
+        {/*Silly API giving me <p> tags in summary*/}
+        <div dangerouslySetInnerHTML={{__html: show.summary}}/>
+      </div>
+    </div>
+  </Link>
+);
+
+export default Result

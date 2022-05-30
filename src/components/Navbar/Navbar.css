@@ -1,0 +1,28 @@
+.navbar {
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    background-color: var(--teal);
+}
+
+.app-icon {
+    height: 2rem;
+    fill: var(--watermelon);
+}
+
+.search-bar {
+    padding-left:0.5rem;
+    line-height: 2rem;
+    border-style: none;
+    background-color: var(--fresh);
+    width: calc(100% - 0.5rem);
+}
+.search-button {
+    outline: none;
+    border-style: none;
+    background-color: var(--fresh);
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}

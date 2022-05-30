@@ -1,0 +1,14 @@
+.accordion-item{
+    background-color: var(--teal);
+    border: 3px solid var(--watermelon);
+    margin: 0;
+}
+.accordion-title{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 0.5rem;
+    background-color: var(--watermelon);
+}
+.accordion-title .expand{
+    justify-self: end;
+}

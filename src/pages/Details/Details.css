@@ -1,0 +1,42 @@
+.details-container {
+    background-color: var(--teal);
+    color: var(--fresh);
+    margin: 1rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 210px auto;
+    gap: 1rem;
+}
+.details-header {
+    place-self: center stretch;
+    text-align: center;
+}
+.details-genres {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.genre-bubble {
+    background-color: var(--watermelon);
+    color: var(--matte);
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 0.25rem;
+}
+.details-extra-info {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    grid-auto-rows: auto;
+}
+.episodes{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+@media only screen and (max-width: 600px) {
+    .details-container {
+        display: block;
+        margin: 0;
+    }
+}
