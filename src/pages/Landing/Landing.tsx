@@ -18,11 +18,11 @@ const Landing = () => {
   const updateSearchValue = (val: string):void => {
     setSearchValue(val)
   }
+  if (error) return <p>error :(</p>
   return (
     <Suspense fallback={<Loading/>}>
       <Navbar searchValue={searchValue} updateSearchValue={updateSearchValue} />
       <div className="landing-page">
-        {/*TODO: error handling!*/}
         <div className="movieList">
           {data?.map((result, index) => <Result key={index} score={result.score} show={result.show}/>)}
         </div>

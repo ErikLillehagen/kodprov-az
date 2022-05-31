@@ -1,3 +1,10 @@
+# Hello there
+I had a lot of fun building this app.
+
+Some issues I had:
+* I have not found a way to search for more than 10 items. Perhaps possible, but nothing about it in tvmazes documentation, and I didn't have time to experiment
+
+
 # Installation
 I chose to use pnpm instead of npm.
 
