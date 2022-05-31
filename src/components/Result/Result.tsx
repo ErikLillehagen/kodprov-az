@@ -1,13 +1,8 @@
 import './Result.css'
 import {Link} from "react-router-dom";
 import TvImage from "../TvImage/TvImage";
-import {ShowProps} from "../../types/showProps";
+import {SearchResultProps} from "../../types/showProps";
 import React from "react";
-
-export interface SearchResultProps {
-  score: number
-  show: ShowProps
-}
 
 const Result: React.FC<SearchResultProps> = ({show, score}: SearchResultProps) => (
   <Link to={`/show/${show.id}`}>
