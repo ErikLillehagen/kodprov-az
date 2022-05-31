@@ -10,7 +10,7 @@ interface propState{
   redirectSearchValue?: string
 }
 
-const Landing = () => {
+const Landing: React.FC = () => {
   const location = useLocation();
   let { redirectSearchValue } = {...location?.state as propState};
   const [searchValue, setSearchValue] = useState<string>(redirectSearchValue || '')
@@ -18,7 +18,7 @@ const Landing = () => {
   const updateSearchValue = (val: string):void => {
     setSearchValue(val)
   }
-  if (error) return <p>error :(</p>
+  if (error) return <p>Something went wrong while fetching data. Try again later</p>
   return (
     <Suspense fallback={<Loading/>}>
       <Navbar searchValue={searchValue} updateSearchValue={updateSearchValue} />

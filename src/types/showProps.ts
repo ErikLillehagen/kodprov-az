@@ -1,8 +1,3 @@
-export interface SearchResultProps {
-  score: number
-  show: ShowProps
-}
-
 export interface ShowProps {
   id: number
   url: string

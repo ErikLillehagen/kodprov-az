@@ -8,7 +8,7 @@ interface EpisodeComponentProps {
   data: EpisodeProps
 }
 
-const Episode = ({data}: EpisodeComponentProps) => {
+const Episode: React.FC<EpisodeComponentProps> = ({data}: EpisodeComponentProps) => {
   return (
     <div className="episode-container">
       <TvImage url={data.image?.medium}/>

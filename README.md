@@ -1,8 +1,15 @@
-# Hello there
-I had a lot of fun building this app.
+# README
+This is a simple web app that lets you search for tv-shows. You can view detailed information about the shows too!
 
-Some issues I had:
-* I have not found a way to search for more than 10 items. Perhaps possible, but nothing about it in tvmazes documentation, and I didn't have time to experiment
+##If I had more time I would have added:
+* More tests
+* A way to add shows to favourites
+* History so a user can see past searches
+* Greater details about shows
+* Accessibility improvements (better contrasts, A11y)
+
+##Some issues I had:
+* I have not found a way to search for more than 10 items. Perhaps possible, but nothing about it in tvmazes documentation.
 
 
 # Installation

@@ -9,7 +9,7 @@ interface AccordionProps {
   episodes: EpisodeProps[]
 }
 
-const EpisodeAccordion = ({title, episodes}: AccordionProps) => {
+const EpisodeAccordion: React.FC<AccordionProps> = ({title, episodes}: AccordionProps) => {
   const [isActive, setIsActive] = useState(false);
 
   return (

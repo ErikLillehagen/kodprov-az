@@ -10,7 +10,7 @@ import {EpisodeProps} from "../../types/episodesProps";
 
 import './Details.css'
 
-const Details = () => {
+const Details: React.FC = () => {
   const {id} = useParams()
   const navigate = useNavigate()
   const {data, error} = useFetch<ShowProps>(`https://api.tvmaze.com/shows/${id}`);
@@ -30,7 +30,7 @@ const Details = () => {
     if (e.key === 'Enter') handleClick();
   }
 
-  if (error) return <p>error :(</p>
+  if (error) return <p>Something went wrong while fetching data. Try again later</p>
   if (!data) return <Loading/>
   return (
     <Suspense fallback={<Loading/>}>
@@ -62,6 +62,7 @@ const Details = () => {
         </div>
         <div className='episodes'>
           {episodeData && <EpisodeAccordion title='Episodes' episodes={episodeData} />}
+          {episodeError && !episodeData && <p>Something went wrong fetching episodes.</p>}
         </div>
       </div>
     </Suspense>
